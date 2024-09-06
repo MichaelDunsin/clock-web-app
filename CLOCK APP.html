@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK APP</title>
+    <link rel="stylesheet" href="CLOCK APP.css">
+</head>
+<body>
+ <div id="pre-website-loading-animation-container">
+    <img src="images/history (1).png" alt="" id="pre-app-loading-animation">
+</div> 
+    <section class="container" id="container">
+        <section class="navbar" id="navbar">
+<div class="navbar-header">
+    <p><img src="images/clock.png"> Clock</p>
+    <div id="menu" onclick ="collapseNavbar(this)">
+        <img id="navbar-img1" src="images/menu (1).png">
+        <img id="navbar-img2" src="images/plus-button.png" style="transform: rotate(45deg); scale: 1.1; display: none;">
+    </div>
+</div>
+<div class="navbar-icons">
+    <input type="radio" id="alarm-click" name="check" style="display: none;" checked>
+    <label for="alarm-click"> 
+        <div id="alarm-navbar" onclick="iconClick(this)" attr="0" name="Alarm">
+        <img src="images/alarm-clock.png">
+        <p>Alarm</p>
+        </div>
+    </label>
+    <input type="radio" id="clock-click" name="check" style="display: none;">
+    <label for="clock-click">
+        <div id="clock-navbar" onclick="iconClick(this)" attr="1" name="Clock">
+            <img src="images/clock-three (1).png">
+        <p>Clock</p>
+        </div>
+    </label>
+        <input type="radio" id="stopwatch" name="check" style="display: none;">
+        <label for="stopwatch">
+        <div id="stopwatch-navbar" onclick="iconClick(this)" attr="2" name="Stopwatch">
+            <img src="images/watch.png">
+        <p>Stopwatch</p>
+        </div>
+        </label>
+        <input type="radio" id="timer-click" name="check" style="display: none;">
+        <label for="timer-click">
+        <div id="timer-navbar" onclick="iconClick(this)" attr="3" name="Timer">
+            <img src="images/duration-alt.png">
+        <p>Timer</p>
+        </div>
+        </label>
+        <input type="radio" id="settings-click" name="check" style="display: none;">
+        <label for="settings-click">
+        <div id="settings-navbar" onclick="iconClick(this)" attr="4" name="About...">
+            <img src="images/settings (1).png">
+        <p>About</p>
+        </div>
+        </label>
+</div>
+        </section>
+        <section class="body" id="body">
+            <div class="body-header">
+                <p id="body-name">Alarm</p>
+                <div class="toggle-button">
+                    <input type="checkbox" id="check">
+                <label onclick="changeTheme(this)" for="check"><h6></h6></label>
+                <!--  Note that the for attribute must bear the same value the id of the checkbox input type -->
+                </div>
+            </div>
+<div class="body-body">
+    <section id="alarm" class="slide active">
+        <b id="no-alarms">No Alarms</b>
+        <div class="alarm-scroll-y">
+        <div class="alarm-invisible-mom">
+       <!--  <div class="alarm-box-container">
+          <div class="alarm-box">
+            <p>
+                <input type="text" class="alarm-hour-value" disabled>
+                <b>:</b>
+                <input type="text" class="alarm-minute-value" disabled>
+            </p>
+            <div class="toggle-alarm">
+                <input type="checkbox" id="alarm-t">
+            <label for="alarm-t"><h6></h6></label>
+            </div>
+          </div>
+            <div class="delete-alarm">
+                Delete Alarm<img src="images/plus-button.png">
+            </div>
+        </div>  -->
+        </div>
+        </div>
+        <div class="add-alarm">
+            <img src="images/plus-button.png" onclick="showAlarmSetter()">
+        </div>
+<div class="new-alarm" id="new-alarm">
+    <div class="alarm-scroller">
+    <div class="hour-scroller">
+        <button class="hourplus" onclick="increaseHours()">+</button>
+    <div class="hour-numbers" tabindex="0">
+        <p class="visible">00</p>
+            <p>01</p>
+            <p>02</p>
+            <p>03</p>
+            <p>04</p>
+            <p>05</p>
+            <p>06</p>
+            <p>07</p>
+            <p>08</p>
+            <p>09</p>
+            <p>10</p>
+            <p>11</p>
+            <p>12</p>
+            <p>13</p>
+            <p>14</p>
+            <p>15</p>
+            <p>16</p>
+            <p>17</p>
+            <p>18</p>
+            <p>19</p>
+            <p>20</p>
+            <p>21</p>
+            <p>22</p>
+            <p>23</p>
+    </div>
+    <button class="hourminus" onclick="decreaseHours()">-</button>
+    </div>
+    <h1 class="alarm-column">:</h1>
+    <div class="minutes-scroller">
+    <button class="minutesplus" onclick="increaseMinutes()">+</button>
+    <div class="minutes-numbers" tabindex="0">
+        <p class="visible">00</p>
+        <p>01</p>
+        <p>02</p>
+        <p>03</p>
+        <p>04</p>
+        <p>05</p>
+        <p>06</p>
+        <p>07</p>
+        <p>08</p>
+        <p>09</p>
+        <p>10</p>
+        <p>11</p>
+        <p>12</p>
+        <p>13</p>
+        <p>14</p>
+        <p>15</p>
+        <p>16</p>
+        <p>17</p>
+        <p>18</p>
+        <p>19</p>
+        <p>20</p>
+        <p>21</p>
+        <p>22</p>
+        <p>23</p>
+        <p>24</p>
+        <p>25</p>
+        <p>26</p>
+        <p>27</p>
+        <p>28</p>
+        <p>29</p>
+        <p>30</p>
+        <p>31</p>
+        <p>32</p>
+        <p>33</p>
+        <p>34</p>
+        <p>35</p>
+        <p>36</p>
+        <p>37</p>
+        <p>38</p>
+        <p>39</p>
+        <p>40</p>
+        <p>41</p>
+        <p>42</p>
+        <p>43</p>
+        <p>44</p>
+        <p>45</p>
+        <p>46</p>
+        <p>47</p>
+        <p>48</p>
+        <p>49</p>
+        <p>50</p>
+        <p>51</p>
+        <p>52</p>
+        <p>53</p>
+        <p>54</p>
+        <p>55</p>
+        <p>56</p>
+        <p>57</p>
+        <p>58</p>
+        <p>59</p>
+    </div>
+    <button class="minutesminus" onclick="decreaseMinutes()">-</button>
+    </div>
+    </div>
+    <div class="alarm-functions">
+      <div class="repeat">
+        <p>Repeat :</p><div>
+            <input type="radio" id="daily" name="fn" style="display: none;" onclick="repeatDaliy()" required>Daily<label for="daily"></label>
+            <input type="radio" id="once" name="fn" style="display: none;" onclick="repeatOnce()" required>Once<label for="once"></label>
+        </div>
+      </div>
+      <div class="ringtone">
+        <p>Ringtone :</p><div>
+            <input type="radio" id="country" name="ring" style="display: none;" onclick="ringtoneCountry()" required>Country<label for="country"></label>
+            <input type="radio" id="asmr" name="ring" style="display: none;" onclick="ringtoneAsmr()" required>Asmr<label for="asmr"></label>
+            <input type="radio" id="jazz" name="ring" style="display: none;" onclick="ringtoneJazz()" required>Jazz<label for="jazz"></label>
+        </div>
+      </div>
+      <div class="submit-alarm">
+        <button onclick="cancelAlarm()">Cancel</button>
+        <b id="error-message"></b>
+        <button onclick="createAlarm()">Create</button>
+      </div>
+    </div>
+</div>
+</section>
+    <section id="clock" class="slide">
+        <div class="local-time">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+            <div id="date"></div>
+        </div>
+        <form id="search-container">
+            <div class="img-search-box" id="imgSearchBox">
+                <div class="searchicon-container">
+                <img src="images/magnifying-glass.png" alt="">
+                </div>
+        <input type="text" id="enter" placeholder="Search Countries">
+        <img src="images/magnifying-glass.png" id="submit" alt="">
+        </div>
+    <div id="answer-wrapper">
+        <div id="answer-country"></div>
+        <video src="Animation - 1723305403601.webm" autoplay loop id="loading-animation"></video>
+        <div id="answer-time"></div>
+    </div>
+        <div id="list"></div>
+        </form>
+    </section>
+    <section id="stopwatch" class="slide">
+        <div>
+            <div class="stopwatch-timer">
+                <span id="hurs" style="display: none;">00</span>
+                <span id="hurs-span" style="display: none;">:</span>
+                <span id="mins">00</span>
+                <span>:</span>
+                <span id="secs">00</span>
+                <span>.</span>
+                <span id="milli-secs">00</span>
+            </div>
+            <div class="stopwatch-controls">
+               <img src="images/square.png" id="stopwatch-restart" style="display: none;">
+               <img src="images/video.png" id="stopwatch-pause" style="display: none;">
+                <img src="images/play.png" id="stopwatch-play">
+            </div>
+        </div>
+    </section>
+    <section id="timer" class="slide">
+<div class="timer-timer">
+    <input type="text" maxlength="2" id="timer-hrs" placeholder="HH" value="00">:
+    <input type="text" maxlength="2" id="timer-min" placeholder="MM" value="00">:
+    <input type="text" maxlength="2" id="timer-sec" placeholder="SS" value="00">
+</div>
+        <div class="timer-displayer">
+            <span id="displayer-hrs">00</span>
+            <span>:</span>
+            <span id="displayer-min">00</span>
+            <span>:</span>
+            <span id="displayer-sec">00</span> 
+        </div>
+        <div class="timer-controls">
+            <img src="images/square.png" id="timer-restart" style="display: none;">
+            <img src="images/video.png" id="timer-pause" style="display: none;">
+             <img src="images/play.png" id="timer-play">
+         </div>
+    </section>
+    <section id="settings" class="slide">
+        <div> 
+            <img src="images/clock.png"><br><br>
+            Hi, my Name is Michael
+            I am a Front-End Developer
+            I am passionate about building
+            interactive and user friendly
+            websites.
+            <br><br><br>
+            This is a clock web app with
+            all the functionalities of a
+            clock app like alarm, local time,
+            stopwatch and timer together with
+            additional features like international
+            world clock to check the time of
+            other countries and dark/light
+            themes for added aesthetics.
+        </div>
+    </section>
+</div>
+           
+        </section>
+        <section class="footer">
+
+        </section>
+    </section>
+     <audio id="Audio" style="display: none;"></audio>
+     <button id="Click" style="display: none;"></button> 
+
+     <audio id="timer-audio" src="audio/country.mp3"  style="display: none;"></audio>
+    <button id="timer-click"  style="display: none;"></button> 
+    <script src="CLOCK APP.js"></script>
+</body>
+</html>
