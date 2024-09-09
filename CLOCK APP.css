@@ -2036,23 +2036,18 @@ font-size: 20px;
 
 #answer-country{
     font-size: 7px;
-    border-radius: 10px;
     width: 50%;
     height: 100%;
     padding: 3% 2%;
     text-transform: capitalize;
-    background-color: rgb(212, 212, 212);
-    scale: 1.1;
 }
 
 #answer-time{
     font-size: 7px;
-    border-radius: 10px;
     text-align: center;
     width: 35%;
     height: 100%;
     padding: 3% 2%;
-    background-color: rgb(212, 212, 212);
 }
 
     .stopwatch-timer{
