@@ -769,7 +769,7 @@ function timerControls(){
     let timerSecCounter = timerSec.value
 
     setInterval(function(){
-        if((timerHrs.value === "00" || timerHrs.value === "0") && (timerMin.value === "00" || timerMin.value === "0") && (timerSec.value === "00" || timerSec.value === "0")){
+        if(((timerHrs.value === "00" || timerHrs.value === "0") && (timerMin.value === "00" || timerMin.value === "0") && (timerSec.value === "00" || timerSec.value === "0")) || (timerHrs.value === "" || timerMin.value === "" || timerSec.value === "")){
             timerPlay.style.opacity = "0.5"
             timerPlay.style.pointerEvents = "none"
         }
@@ -825,15 +825,12 @@ function timerControls(){
 
             if(timerHrsCounter < 0){
                 clearInterval(timer)
-
-                
-
                 timerSecCounter = 0
                 timerMinCounter = 0
                 timerHrsCounter = 0
-                timerSec.value = (timerSecCounter < 10 ? "0" : "") + timerSecCounter
-                timerMin.value = (timerMinCounter < 10 ? "0" : "") + timerMinCounter
-                timerHrs.value = (timerHrsCounter < 10 ? "0" : "") + timerHrsCounter
+                timerSec.value = ""
+                timerMin.value = ""
+                timerHrs.value = ""
 
                 timerPlay.style.display = "block";
                 timerPause.style.display = "none";
@@ -895,9 +892,9 @@ function timerControls(){
         timerMinCounter = 0
         timerHrsCounter = 0
 
-        timerSec.value = (timerSecCounter < 10 ? "0" : "") + timerSecCounter
-        timerMin.value = (timerMinCounter < 10 ? "0" : "") + timerMinCounter
-        timerHrs.value = (timerHrsCounter < 10 ? "0" : "") + timerHrsCounter
+        timerSec.value = ""
+        timerMin.value = ""
+        timerHrs.value = ""
 
         
     })

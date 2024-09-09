@@ -1390,6 +1390,16 @@ font-size: 20px;
 }
 
 @media(min-width:360px) and (max-width:599px){
+#pre-app-loading-animation{
+   position: relative;
+    transform: translateX(-150%);
+    animation-name: openingAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    width: 20%;
+}               
+
     .container{
         position: absolute;
         left: 0%;
@@ -1561,7 +1571,7 @@ font-size: 20px;
         margin-top: 5px;
         height: 90%;
         width: 240px;
-        overflow-y: scroll;
+        overflow-y: hidden;
         scrollbar-width: none;
         scrollbar-color: rgb(230, 236, 246) rgb(255, 255, 255);
     }
@@ -1678,6 +1688,16 @@ font-size: 20px;
 }
 
 @media(max-width:359px){
+#pre-app-loading-animation{
+   position: relative;
+    transform: translateX(-150%);
+    animation-name: openingAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    width: 20%;
+}
+
     .container{
         position: absolute;
         left: 0%;
@@ -1931,7 +1951,7 @@ font-size: 20px;
         margin-top: 5px;
         height: 90%;
         width: 240px;
-        overflow-y: scroll;
+        overflow-y: hidden;
         scrollbar-width: none;
         scrollbar-color: rgb(230, 236, 246) rgb(255, 255, 255);
     }
@@ -1949,6 +1969,7 @@ font-size: 20px;
     height: 90%;  
     transition: 0.2s;
     opacity: 1;
+    scale: 0.9;
  }
 
     #enter{
@@ -1998,6 +2019,32 @@ font-size: 20px;
         text-transform: capitalize;
         font-size: 12px;
     }
+
+#answer-wrapper{
+    width: 100%;
+    margin: 10px 10px;
+}
+
+#answer-country{
+    font-size: 7px;
+    border-radius: 10px;
+    width: 50%;
+    height: 100%;
+    padding: 3% 2%;
+    text-transform: capitalize;
+    background-color: rgb(212, 212, 212);
+    scale: 1.1;
+}
+
+#answer-time{
+    font-size: 7px;
+    border-radius: 10px;
+    text-align: center;
+    width: 20%;
+    height: 100%;
+    padding: 3% 2%;
+    background-color: rgb(212, 212, 212);
+}
 
     .stopwatch-timer{
         margin: auto;
