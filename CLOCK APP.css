@@ -977,7 +977,6 @@ background-color: rgb(212, 212, 212);
     position: relative;
     left: 30%;
     scale: 2.0;
-
 }
 
 .highlight{
@@ -2018,6 +2017,13 @@ font-size: 20px;
         scrollbar-color: rgb(230, 236, 246) rgb(255, 255, 255);
         text-transform: capitalize;
         font-size: 12px;
+    }
+
+    #loading-animation{
+        display: none;
+        position: relative;
+        left: 30%;
+        scale: 0.8;
     }
 
 #answer-wrapper{
