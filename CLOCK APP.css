@@ -2022,7 +2022,7 @@ font-size: 20px;
     #loading-animation{
         display: none;
         position: relative;
-        left: 30%;
+        left: 0%;
         scale: 0.8;
     }
 
