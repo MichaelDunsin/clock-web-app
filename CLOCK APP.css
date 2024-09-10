@@ -1623,6 +1623,38 @@ font-size: 20px;
         font-size: 12px;
     }
 
+    #loading-animation{
+        display: none;
+        position: relative;
+        left: 0%;
+        scale: 0.8;
+    }
+
+#answer-wrapper{
+    border: 1px solid;
+    width: 100%;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#answer-country{
+    font-size: 7px;
+    width: 50%;
+    height: 100%;
+    padding: 3% 2%;
+    text-transform: capitalize;
+}
+
+#answer-time{
+    font-size: 7px;
+    text-align: center;
+    width: 35%;
+    height: 100%;
+    padding: 3% 2%;
+    text-transform: capitalize;
+}
+
     .stopwatch-timer{
         margin: auto;
         margin-top: 20%;
@@ -2036,23 +2068,19 @@ font-size: 20px;
 
 #answer-country{
     font-size: 7px;
-    border-radius: 10px;
     width: 50%;
     height: 100%;
     padding: 3% 2%;
     text-transform: capitalize;
-    background-color: rgb(212, 212, 212);
-    scale: 1.1;
 }
 
 #answer-time{
     font-size: 7px;
-    border-radius: 10px;
     text-align: center;
     width: 35%;
     height: 100%;
     padding: 3% 2%;
-    background-color: rgb(212, 212, 212);
+    text-transform: capitalize;
 }
 
     .stopwatch-timer{
