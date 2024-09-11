@@ -1631,7 +1631,8 @@ font-size: 20px;
     }
 
 #answer-wrapper{
-    border: 1px solid;
+    display: none;
+    border: 3px solid transparent;
     width: 100%;
     margin: 10px 10px;
     display: flex;
@@ -1639,6 +1640,7 @@ font-size: 20px;
 }
 
 #answer-country{
+    display: none;
     font-size: 7px;
     width: 50%;
     height: 100%;
@@ -1647,6 +1649,7 @@ font-size: 20px;
 }
 
 #answer-time{
+    display: none;
     font-size: 7px;
     text-align: center;
     width: 35%;
