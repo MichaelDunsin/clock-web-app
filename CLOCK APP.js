@@ -11,7 +11,12 @@ let navWords = document.querySelectorAll(".navbar-icons div p");
 let body = document.getElementById("body");
 let slides = document.querySelectorAll(".slide");
 let slideIndex = 0;
-
+/* 
+So in a way, i just hacked the normal Client side rendering of this webapp and made ith look like Server side rendering
+because nothing will actually be displayed in the first 4.5s (apart from the loading animation) to wait for the rest of the page to 
+fully load(actually, the time the rest of the app needs to load is very little, but i just wanted the loading animation to show for long). 
+Then after 4.5s, the webapp comes to view
+*/
 window.addEventListener("load", ()=>{
   setTimeout(function(){
     preAppLoadingAnimation.style.display = "none";
