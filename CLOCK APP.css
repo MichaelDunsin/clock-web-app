@@ -7,6 +7,7 @@
 }
 
 html{
+    background-color: white;
     transition: 0.5s;
 }
 
@@ -99,7 +100,6 @@ The linear-gradent takes a minimum of two colours
     width: 83%;
     height: 95%;
     margin: auto;
-    box-shadow: 0px 0px 20px  10px  rgb(13, 55, 124);
     border-radius: 30px;
     justify-content: space-between;
     display: none;
@@ -504,6 +504,38 @@ transition: 0.5s all;
     height: 60px;
     text-align: right;
     font-size: 16px;   
+}
+
+.snooze{
+    position: absolute;
+    color: rgb(59,130,246);
+    font-size: 15px;
+    top: 55%;
+    right: 67%;
+    padding: 8px 8px;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+.snooze:hover{
+    border: 3px solid rgb(59,130,246, 0.5);
+    background-color: white;
+}
+
+@keyframes jump{
+    0%{transform: translateY(0);}
+    5%{transform: translateY(3px);}
+    10%{transform: translateY(-15px);}
+    15%{transform: translateY(-18px);}
+    20%{transform: translateY(0);}
+    25%{transform: translateY(3px);}
+    30%{transform: translateY(-15px);}
+    35%{transform: translateY(-18px);}
+    40%{transform: translateY(0);}
+    45%{transform: translateY(4px);}
+    70%{transform: translateY(0);}
 }
 
 .delete-alarm img{
@@ -1204,7 +1236,6 @@ font-size: 20px;
     width: 83%;
     height: 95%;
     margin: auto;
-    box-shadow: 0px 0px 20px  10px  rgb(13, 55, 124);
     border-radius: 30px;
     justify-content: space-between;
     display: none;
@@ -1399,13 +1430,17 @@ font-size: 20px;
     width: 20%;
 }               
 
+html{
+    background-color:rgb(212, 212, 212);
+    transition: 0.5s;
+}
+
     .container{
         position: absolute;
         left: 0%;
         border: 6px solid rgb(212, 212, 212);
         width: 100%;
         height: 97%;
-        box-shadow: 0px 0px 20px  10px  rgb(13, 55, 124);
         border-radius: 30px;
         display: none;
         background-color:rgb(212, 212, 212);
@@ -1732,13 +1767,17 @@ font-size: 20px;
     width: 20%;
 }
 
+html{
+    background-color:rgb(212, 212, 212);
+    transition: 0.5s;
+}
+
     .container{
         position: absolute;
         left: 0%;
         border: 6px solid rgb(212, 212, 212);
         width: 100%;
         height: 99%;
-        box-shadow: 0px 0px 20px  10px  rgb(13, 55, 124);
         border-radius: 30px;
         display: none;
         background-color:rgb(212, 212, 212);

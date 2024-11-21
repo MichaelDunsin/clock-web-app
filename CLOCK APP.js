@@ -21,7 +21,7 @@ window.addEventListener("load", ()=>{
   setTimeout(function(){
     preAppLoadingAnimation.style.display = "none";
     container.style.display = "block";
-    setInterval(
+    setTimeout(
       function()
       {container.style.opacity = "1";},
        100)
@@ -361,10 +361,17 @@ function createAlarmElements(hour, minute, index){
     let deleteAlarm = document.createElement("div");
     deleteAlarm.className = "delete-alarm";
     deleteAlarm.innerHTML = "Delete Alarm";
+    
     alarmBoxContainer.appendChild(alarmBox);
     alarmBoxContainer.appendChild(deleteAlarm);
     let deleteAlarmImg = document.createElement("img");
     deleteAlarmImg.src = "images/plus-button.png";
+
+    let snooze = document.createElement("button")
+    snooze.innerHTML = 'Snooze'
+    snooze.className = "snooze"
+    
+    deleteAlarm.appendChild(snooze);
     deleteAlarm.appendChild(deleteAlarmImg);
 }
 
@@ -376,11 +383,15 @@ function updateAlarmFigures(){
     localStorage.setItem("ringtone", JSON.stringify(ringtone));
 }
 
-// click event for deleting alarms
+// click event for deleting alarms and snoozing
 
 alarmInvisibleMom.addEventListener("click", function(e){
     if(e.target.tagName === "IMG"){
   deleteAlarm(e);
+        }
+        if(e.target.className === "snooze"){            
+            snoozeAlarm(e)
+            
         }
     })
 
@@ -408,10 +419,29 @@ alarmInvisibleMom.addEventListener("click", function(e){
         }
     }
 
+    function snoozeAlarm(e){
+        let currentTime = new Date();
+       let sleep = document.querySelectorAll(".snooze")
+        hours =  JSON.parse(localStorage.getItem("hours")) || [];
+minutes = JSON.parse(localStorage.getItem("minutes")) || [];
+        let parentDiv = e.target.parentElement.parentElement;
+       let input = parentDiv.querySelector(".alarmT");
+       let uniqueId = input.id;       
+       let toogle = document.querySelectorAll(".alarmT");
+        if(!toogle[uniqueId].checked){
+            if(parseInt(hours[uniqueId]) === currentTime.getHours() && parseInt(minutes[uniqueId]) === currentTime.getMinutes()){
+                    alarmSound.pause();
+                    sleep[uniqueId].style.animation = '';
+            }
+    }
+    
+}
+
 // check alarms
 
 function checkAlarms(){
     let currentTime = new Date();
+   let sleep = document.querySelectorAll(".snooze")
     boxes = document.querySelectorAll(".alarm-box-container");
     let toogle = document.querySelectorAll(".alarmT");
 hours =  JSON.parse(localStorage.getItem("hours")) || [];
@@ -424,9 +454,10 @@ for(i=0; i<hours.length; i++){
     alarmClick.addEventListener("click", ()=> {
         playAlarmSound(ringtone[i]);
         boxes[i].style.animation = 'box1 1.5s ease-in 40';
+        sleep[i].style.animation = 'jump 2s ease-in 40';
     })
     alarmClick.click();
-
+/* 
 setTimeout(()=> {window.confirm(`The time is ${(currentTime.getHours() > 10 ? "" : "0") + 
     currentTime.getHours()}:${(currentTime.getMinutes() > 10 ? "" : "0") + 
     currentTime.getMinutes()} ${(currentTime.getHours() < 12 ? "AM" : "PM")}`)
@@ -437,8 +468,9 @@ setTimeout(()=> {window.confirm(`The time is ${(currentTime.getHours() > 10 ? ""
         alarmSound.pause();
     }
     }
-    , 500);
-    } 
+    , 500); */
+    }
+
     if(parseInt(hours[i]) === currentTime.getHours() && parseInt(minutes[i]) === currentTime.getMinutes() && currentTime.getSeconds() === 0 && repeat[i] === "once"){
         alarmClick.click();
         alarmClick.addEventListener("click", ()=> {
@@ -907,5 +939,5 @@ function timerControls(){
     })
 
 }
-
+    
 timerControls()
