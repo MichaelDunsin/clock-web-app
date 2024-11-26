@@ -612,7 +612,7 @@ let answerWrapper = document.getElementById("answer-wrapper");
         list.innerHTML = "";
     e.preventDefault();
 
-    answerWrapper.style.display = "flex";
+    answerWrapper.style.display = "block";
     loadingAnimation.style.display = "block";
     loadingAnimation.play();
     answerCountry.style.display = "none";
@@ -620,22 +620,24 @@ let answerWrapper = document.getElementById("answer-wrapper");
     answerCountry.innerHTML = "";
     answerTime.innerHTML = "";
 
+    
+
     country = document.getElementById("enter").value.trim().toLowerCase();
     const endPoint = countries[country];
     if(endPoint){
-    fetch(`https://www.worldtimeapi.org/api/timezone/${endPoint}`)
+    fetch(`https://api.timezonedb.com/v2.1/get-time-zone?key=LELELOE1I9RW&format=json&by=zone&zone=${endPoint}`)
     .then(response => response.json())
     .then((data) => {
-    let timeString = new Date(data.datetime);
-    answerWrapper.style.display = "flex";
+    let timeString = data.formatted;
+    answerWrapper.style.display = "block";
     loadingAnimation.style.display = "none";
     answerCountry.style.display = "block";
     answerTime.style.display = "block";
     answerCountry.innerHTML = `${country}`;
-    answerTime.innerHTML = `${timeString.toLocaleTimeString()} <br> <span class="time-string">${timeString.toLocaleDateString()}</span>`
+    answerTime.innerHTML = `${timeString.split(' ')[1]} <br> <span class="time-string">${timeString.split(' ')[0]}</span>`
 })
     .catch((error) => {
-    answerWrapper.style.display = "flex";
+    answerWrapper.style.display = "block";
     loadingAnimation.style.display = "none";
     answerCountry.style.display = "block";
     answerTime.style.display = "none";
@@ -645,7 +647,7 @@ let answerWrapper = document.getElementById("answer-wrapper");
     })
     }
     else{
-    answerWrapper.style.display = "flex";
+    answerWrapper.style.display = "block";
     loadingAnimation.style.display = "none";
     answerCountry.style.display = "block";
     answerTime.style.display = "none";

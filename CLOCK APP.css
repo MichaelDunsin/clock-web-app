@@ -34,7 +34,9 @@ The linear-gradent takes a minimum of two colours
     animation-name: openingAnimation;
     animation-duration: 5s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease;}
+    animation-timing-function: ease;
+    
+}
 
 @keyframes openingAnimation{
     0%{
@@ -973,42 +975,46 @@ background-color: rgb(212, 212, 212);
 }
 
 #answer-wrapper{
+    font-size: 12px;
     margin-left: 15%;
     max-width: 70%;
     border-radius: 10px;
     padding: 1% 1%;
-    margin-top: 3%;
+    margin-top: 6%;
     height: 30%;
     justify-content: space-between;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: none;
 }
 
+#loading-animation{
+    position: relative;
+    margin: auto;
+    border: 1px solid transparent;
+    width: 100%;
+    height: 100px;
+    display: none;
+}
+
 #answer-country{
-    font-size: 10px;
+    text-align: center;
     border-radius: 10px;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    padding: 3% 2%;
+    padding: 5% 2%;
+    margin-bottom: 2px;
     text-transform: capitalize;
     background-color: rgb(212, 212, 212);
 }
 
 #answer-time{
-    font-size: 10px;
+    text-align: center;
     border-radius: 10px;
     text-align: center;
-    width: 20%;
+    width: 100%;
     height: 100%;
-    padding: 3% 2%;
+    padding: 4% 2%;
     background-color: rgb(212, 212, 212);
-}
-
-#loading-animation{
-    display: none;
-    position: relative;
-    left: 30%;
-    scale: 2.0;
 }
 
 .highlight{
@@ -1427,7 +1433,7 @@ font-size: 20px;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
-    width: 20%;
+    width: 17%;
 }               
 
 html{
@@ -1644,6 +1650,19 @@ html{
         outline: none;
     }
 
+    #answer-wrapper{
+        font-size: 10px;
+        margin-left: 15%;
+        max-width: 70%;
+        border-radius: 10px;
+        padding: 1% 1%;
+        margin-top: 6%;
+        height: 30%;
+        justify-content: space-between;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        display: none;
+    }
+
     #list{
         background-color: rgb(212, 212, 212);
         margin-left: 6%;
@@ -1657,41 +1676,6 @@ html{
         text-transform: capitalize;
         font-size: 12px;
     }
-
-    #loading-animation{
-        display: none;
-        position: relative;
-        left: 0%;
-        scale: 0.8;
-    }
-
-#answer-wrapper{
-    display: none;
-    border: 3px solid transparent;
-    width: 100%;
-    margin: 10px 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-#answer-country{
-    display: none;
-    font-size: 7px;
-    width: 50%;
-    height: 100%;
-    padding: 3% 2%;
-    text-transform: capitalize;
-}
-
-#answer-time{
-    display: none;
-    font-size: 7px;
-    text-align: center;
-    width: 35%;
-    height: 100%;
-    padding: 3% 2%;
-    text-transform: capitalize;
-}
 
     .stopwatch-timer{
         margin: auto;
@@ -1759,12 +1743,12 @@ html{
 @media(max-width:359px){
 #pre-app-loading-animation{
    position: relative;
-    transform: translateX(-150%);
+    transform: translateX(-100%);
     animation-name: openingAnimation;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
-    width: 20%;
+    width: 18%;
 }
 
 html{
@@ -2032,8 +2016,8 @@ html{
     .alarm-box-container{
     border: 3px solid transparent;
     position: relative;
-    margin-left: 1%;
-    margin-top: 5%;
+    margin-left: -5%;
+    margin-top: 0%;
     width: 220px;
     background-color: rgb(212, 212, 212);
     border-radius: 30px;
@@ -2093,37 +2077,39 @@ html{
         font-size: 12px;
     }
 
-    #loading-animation{
+    #answer-wrapper{
+        font-size: 9px;
+        margin-left: 15%;
+        max-width: 70%;
+        border-radius: 10px;
+        padding: 1% 1%;
+        margin-top: 6%;
+        height: 30%;
+        justify-content: space-between;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         display: none;
-        position: relative;
-        left: 0%;
-        scale: 0.8;
     }
-
-#answer-wrapper{
-    border: 1px solid;
-    width: 100%;
-    margin: 10px 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-#answer-country{
-    font-size: 7px;
-    width: 50%;
-    height: 100%;
-    padding: 3% 2%;
-    text-transform: capitalize;
-}
-
-#answer-time{
-    font-size: 7px;
-    text-align: center;
-    width: 35%;
-    height: 100%;
-    padding: 3% 2%;
-    text-transform: capitalize;
-}
+    
+    #answer-country{
+        text-align: center;
+        border-radius: 10px;
+        width: 100%;
+        height: 80%;
+        padding: 5% 2%;
+        margin-bottom: 2px;
+        text-transform: capitalize;
+        background-color: rgb(212, 212, 212);
+    }
+    
+    #answer-time{
+        text-align: center;
+        border-radius: 10px;
+        text-align: center;
+        width: 100%;
+        height: 80%;
+        padding: 5% 2%;
+        background-color: rgb(212, 212, 212);
+    }
 
     .stopwatch-timer{
         margin: auto;
