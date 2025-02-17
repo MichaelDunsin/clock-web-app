@@ -931,9 +931,9 @@ function timerControls(){
         timerMinCounter = 0
         timerHrsCounter = 0
 
-        timerSec.value = ""
-        timerMin.value = ""
-        timerHrs.value = ""
+        timerSec.value = "00"
+        timerMin.value = "00"
+        timerHrs.value = "00"
 
         
     })
